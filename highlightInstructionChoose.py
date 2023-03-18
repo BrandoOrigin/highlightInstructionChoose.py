@@ -6,14 +6,8 @@
 from java.awt import Color
 
 
-# define RGB colors for target instructions
-
-# color_default sets non-target instructions colors
-# needed to account for bug in graph view
+#Create color variables for user to choose from
 colorDefault = Color(255,255,255) # white
-
-
-
 red = Color(255, 220, 220) #light red
 blue = Color(200, 240, 255) # blue
 violet = Color(245, 205, 255) # violet
@@ -23,14 +17,14 @@ orange = Color(255, 200, 100) # orange
 lightGrey = Color(220, 220, 220) # light grey
 darkGrey = Color(195, 195, 195) # dark grey
 
-
+#Give user option to choose which color for each choice
 def chooseColor():
 	colorNames = ['red', 'blue', 'violet', 'green', 'yellow', 'orange', 'light grey', 'dark grey', ‘default’]
 	colors = [red, blue, violet, green, yellow, orange, lightGrey, darkGrey, colorDefault]
 	colorChoice = askChoice("Choose a color", "Select a color to use:", colorNames, colorNames[0])
 	return colors[colorNames.index(colorChoice)]
 
-
+#Display what's happening in the console
 print("The first color you choose will be assigned to the call instructions.")
 colorCall = chooseColor()
 print("The second color you choose will be assigned to the lea instructions.")
